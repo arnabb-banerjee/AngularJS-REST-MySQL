@@ -1,0 +1,8 @@
+CREATE DEFINER=`root`@`localhost` PROCEDURE `fetch_word`(
+	IN p_word varchar(300)
+)
+BEGIN
+	select  s.id, s.word
+	from input s
+	where word like concat('%', p_word, '%');
+end
